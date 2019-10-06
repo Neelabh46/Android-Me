@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Android_Me
 App that lets you style your own Android! This uses Fragments to create a flexible and responsive UI.
 
@@ -96,3 +97,6 @@ The **Diff** link will take you to a Github diff as seen below:
 All of the code that was added in the solution is in green, and the removed code (which will usually be the TODO comments) is in red. 
 ## Report Issues
 Notice any issues with a repository? Please file a github issue in the repository.
+=======
+
+>>>>>>> 59d92e1f3df4655a043732612873f6c8456f518f

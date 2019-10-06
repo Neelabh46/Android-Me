@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Android_Me</string>
+<<<<<<< HEAD
     <string name="next">Next</string>
+=======
+>>>>>>> 59d92e1f3df4655a043732612873f6c8456f518f
 </resources>
