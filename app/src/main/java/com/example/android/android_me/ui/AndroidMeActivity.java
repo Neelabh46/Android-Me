@@ -16,10 +16,12 @@
 
 package com.example.android.android_me.ui;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.android.android_me.R;
+import com.example.android.android_me.data.AndroidImageAssets;
 
 // This activity will display a custom Android image composed of three body parts: head, body, and legs
 public class AndroidMeActivity extends AppCompatActivity {
@@ -37,7 +39,30 @@ public class AndroidMeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_android_me);
+            setContentView(R.layout.activity_android_me);
+            if(savedInstanceState==null) {
+
+
+                BodyFragment fragment = new BodyFragment();
+                fragment.setmImageID(AndroidImageAssets.getHeads());
+                int headIndex = getIntent().getIntExtra("headIndex", 0);
+                fragment.setmIndex(headIndex);
+                FragmentManager fmanager = getSupportFragmentManager();
+                fmanager.beginTransaction().add(R.id.frame_body_head, fragment).commit();
+
+
+                BodyFragment fragment_body = new BodyFragment();
+                fragment_body.setmImageID(AndroidImageAssets.getBodies());
+                int Index = getIntent().getIntExtra("bodyIndex", 0);
+                fragment_body.setmIndex(Index);
+                fmanager.beginTransaction().add(R.id.frame_body_mid, fragment_body).commit();
+
+                BodyFragment fragment_legs = new BodyFragment();
+                fragment_legs.setmImageID(AndroidImageAssets.getLegs());
+                int lIndex = getIntent().getIntExtra("legIndex", 0);
+                fragment_legs.setmIndex(lIndex);
+                fmanager.beginTransaction().add(R.id.frame_body_legs, fragment_legs).commit();
+            }
 
         // TODO (5) Create a new BodyPartFragment instance and display it using the FragmentManager
     }
